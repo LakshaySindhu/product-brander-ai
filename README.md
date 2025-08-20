@@ -1,39 +1,56 @@
-# Product Brander AI
+# Product Brander AI 
 
-A full-stack MVP for generating branded product images and names using AI.  
-Built with **FastAPI** (backend) and **Next.js** (frontend), leveraging OpenAI and Stability APIs.
+Product Brander AI is a full-stack web application designed to help e-commerce sellers instantly create professional, high-quality branding images. Users can upload a product photo, provide a short description, and select a category, style, and size to generate a unique, AI-powered image perfect for marketing and online stores.
 
----
+[Image of the Product Brander AI application interface]
 
 ## Features
 
-- Upload product images
-- Generate branded names and marketing copy using AI
-- Generate branded product images using Stability API
-- Download generated images and results
+-   **Image Upload**: Upload your existing product photos (JPG/PNG).
+-   **AI-Powered Generation**: Leverages Stability AI's powerful text-to-image models.
+-   **Customizable Prompts**: The backend uses category-specific templates to generate effective prompts.
+-   **Style Selection**: Choose from various creative styles like Photorealistic, Cinematic, and Minimalist.
+-   **Size Options**: Generate images in different aspect ratios (Square, Landscape, Portrait).
+-   **Simple UI**: A clean and intuitive interface built with Next.js and Tailwind CSS.
+-   **Local Image Serving**: The backend saves and serves generated images for immediate download.
 
 ---
 
 ## Tech Stack
 
-- **Frontend:** Next.js, Tailwind CSS, TypeScript
-- **Backend:** FastAPI, Pydantic, OpenAI, Stability API
-- **Other:** Python-dotenv, Requests, Aiofiles
+This project is a monorepo containing a separate frontend and backend.
+
+-   **Backend**:
+    -   **Framework**: FastAPI
+    -   **Language**: Python
+    -   **AI Service**: Stability AI API
+    -   **Server**: Uvicorn
+
+-   **Frontend**:
+    -   **Framework**: Next.js (App Router)
+    -   **Language**: TypeScript
+    -   **Styling**: Tailwind CSS
+    -   **UI Components**: React
 
 ---
 
 ## Getting Started
 
+Follow these instructions to set up and run the project on your local machine.
+
 ### Prerequisites
 
-- Node.js (v18+ recommended)
-- Python 3.8
-- [OpenAI API Key](https://platform.openai.com/)
-- [Stability API Key](https://platform.stability.ai/)
+-   **Node.js** (v18 or later)
+-   **Python** (v3.8 or later)
+-   A **Stability AI API Key** (get one for free from the [Stability AI Platform](https://platform.stability.ai/))
 
----
+### 1. Clone the Repository
 
-### Backend Setup
+```bash
+git clone [https://github.com/your-username/product-brander-ai.git](https://github.com/your-username/product-brander-ai.git)
+cd product-brander-ai
+
+### 2. Backend Setup
 
 1. **Install dependencies:**
     ```bash
@@ -58,7 +75,7 @@ Built with **FastAPI** (backend) and **Next.js** (frontend), leveraging OpenAI a
 
 ---
 
-### Frontend Setup
+### 3. Frontend Setup
 
 1. **Install dependencies:**
     ```bash
@@ -103,6 +120,13 @@ product-brander-mvp/
 
 ---
 
-## License
+## Future Improvements 
 
-This project is for demonstration purposes only.
+
+- Cloud Storage: Integrate AWS S3 or Supabase Storage for uploaded and generated images.
+
+- User Authentication: Add user accounts to save generation history.
+
+- Database Integration: Store metadata about each generated image in a database like PostgreSQL or SQLite.
+
+- Advanced Editing: Implement image-to-image features like inpainting or outpainting.
