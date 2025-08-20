@@ -1,14 +1,16 @@
-# Product Brander AI 
+# Product Brander AI 🚀
 
 Product Brander AI is a full-stack web application designed to help e-commerce sellers instantly create professional, high-quality branding images. Users can upload a product photo, provide a short description, and select a category, style, and size to generate a unique, AI-powered image perfect for marketing and online stores.
 
-[Image of the Product Brander AI application interface]
 
-## Features
+
+---
+
+## ✨ Features
 
 -   **Image Upload**: Upload your existing product photos (JPG/PNG).
--   **AI-Powered Generation**: Leverages Stability AI's powerful text-to-image models.
--   **Customizable Prompts**: The backend uses category-specific templates to generate effective prompts.
+-   **AI-Powered Generation**: Leverages Stability AI's powerful text-to-image models to create stunning visuals.
+-   **Customizable Prompts**: The backend uses category-specific templates to generate effective prompts for the AI.
 -   **Style Selection**: Choose from various creative styles like Photorealistic, Cinematic, and Minimalist.
 -   **Size Options**: Generate images in different aspect ratios (Square, Landscape, Portrait).
 -   **Simple UI**: A clean and intuitive interface built with Next.js and Tailwind CSS.
@@ -16,7 +18,7 @@ Product Brander AI is a full-stack web application designed to help e-commerce s
 
 ---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 This project is a monorepo containing a separate frontend and backend.
 
@@ -25,7 +27,6 @@ This project is a monorepo containing a separate frontend and backend.
     -   **Language**: Python
     -   **AI Service**: Stability AI API
     -   **Server**: Uvicorn
-
 -   **Frontend**:
     -   **Framework**: Next.js (App Router)
     -   **Language**: TypeScript
@@ -34,7 +35,7 @@ This project is a monorepo containing a separate frontend and backend.
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
 Follow these instructions to set up and run the project on your local machine.
 
@@ -49,26 +50,35 @@ Follow these instructions to set up and run the project on your local machine.
 ```bash
 git clone [https://github.com/your-username/product-brander-ai.git](https://github.com/your-username/product-brander-ai.git)
 cd product-brander-ai
+```
 
 ### 2. Backend Setup
 
-1. **Install dependencies:**
+1.  **Navigate to the backend directory:**
     ```bash
     cd backend
+    ```
+
+2.  **Create a virtual environment and install dependencies:**
+    ```bash
+    # Create and activate the virtual environment
     python -m venv venv
     source venv/bin/activate
+    
+    # On Windows, use: venv\Scripts\activate
+    
+    # Install required packages
     pip install -r requirements.txt
     ```
 
-2. **Configure environment variables:**  
-   Create a `.env` file in `/backend`:
-    ```
-    OPENAI_API_KEY=your_openai_api_key
-    STABILITY_API_KEY=your_stability_api_key
-    ALLOWED_ORIGIN=http://localhost:3000
+3.  **Configure environment variables:** Create a `.env` file in the `/backend` directory and add the following, replacing the placeholder with your actual key:
+    ```env
+    STABILITY_API_KEY="your_stability_api_key"
+    ALLOWED_ORIGIN="http://localhost:3000"
     ```
 
-3. **Run the FastAPI server:**
+4.  **Run the FastAPI server:**
+    The backend will be available at `http://localhost:8000`.
     ```bash
     uvicorn main:app --reload
     ```
@@ -77,26 +87,33 @@ cd product-brander-ai
 
 ### 3. Frontend Setup
 
-1. **Install dependencies:**
+1.  **Navigate to the frontend directory (from the root):**
     ```bash
     cd frontend
+    ```
+
+2.  **Install dependencies:**
+    ```bash
     npm install
     ```
 
-2. **Configure environment variables:**  
-   Create a `.env.local` file in `/frontend` if needed.
+3.  **Configure environment variables:** Create a `.env.local` file in the `/frontend` directory and add the backend API URL:
+    ```env
+    NEXT_PUBLIC_API_URL="http://localhost:8000"
+    ```
 
-3. **Run the Next.js app:**
+4.  **Run the Next.js app:**
+    The frontend will be available at `http://localhost:3000`.
     ```bash
     npm run dev
     ```
 
 ---
 
-## Project Structure
+## 📂 Project Structure
 
 ```
-product-brander-mvp/
+product-brander-ai/
 ├── backend/
 │   ├── main.py
 │   ├── prompts.py
@@ -108,25 +125,16 @@ product-brander-mvp/
     ├── src/
     ├── public/
     ├── package.json
+    ├── .env.local
     └── ...
 ```
 
 ---
 
-## Usage
+## 🔮 Future Improvements
 
-- Go to [http://localhost:3000](http://localhost:3000)
-- Upload a product image and generate branded content
-
----
-
-## Future Improvements 
-
-
-- Cloud Storage: Integrate AWS S3 or Supabase Storage for uploaded and generated images.
-
-- User Authentication: Add user accounts to save generation history.
-
-- Database Integration: Store metadata about each generated image in a database like PostgreSQL or SQLite.
-
-- Advanced Editing: Implement image-to-image features like inpainting or outpainting.
+-   [ ] **Cloud Storage**: Integrate AWS S3 or Supabase Storage for uploaded and generated images.
+-   [ ] **User Authentication**: Add user accounts to save generation history and manage credits.
+-   [ ] **Database Integration**: Store metadata about each generated image in a database like PostgreSQL or SQLite.
+-   [ ] **Advanced Editing**: Implement image-to-image features like inpainting, outpainting, or background removal.
+-   [ ] **Containerization**: Add Docker support for easier setup and deployment.
