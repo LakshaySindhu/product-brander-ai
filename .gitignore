@@ -1,0 +1,4 @@
+# IDE / Editor-specific folders
+.vscode/
+# macOS system files
+.DS_Store
